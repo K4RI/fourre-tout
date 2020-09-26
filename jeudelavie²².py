@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import * 
 
 file = open('jeu-depart.txt', 'r')
 data = file.read()
