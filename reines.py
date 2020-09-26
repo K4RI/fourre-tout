@@ -15,4 +15,4 @@ def reines(N):
         if reine(N-1,config):
             perm_ok=perm_ok+(config,)
     return len(perm_ok), perm_ok
-print(reines(4))
+print(reines(4)) 
