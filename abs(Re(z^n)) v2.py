@@ -1,4 +1,4 @@
-from math import sqrt, log, cos
+from math import sqrt, log, cos 
 from numpy import arctan
 
 reals=[]
