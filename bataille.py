@@ -1,4 +1,4 @@
-#coder un bail qui calcule le temps moyen d'une partie de bataille
+#coder un bail qui calcule le temps moyen d'une partie de bataille 
 # http://www.lifl.fr/%7Ejdelahay/pls/1995/030.pdf
 from random import shuffle
 from math import log,log10
