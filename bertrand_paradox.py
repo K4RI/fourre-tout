@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from random import random
 from statistics import median, mean
 
-plt.figure(figsize=(8, 8))
+plt.figure(figsize=(6, 6))
 
 # circle1 = plt.Circle((0, 0), 1, color='k', fill=False, linewidth=2)
 # plt.gca().add_patch(circle1)
@@ -19,8 +19,8 @@ plt.axis('equal')
 
 lengths=[]
 
-N=2000 # nombre de paires simulées
-for _ in range(N):
+N=int(2e5) # nombre de paires simulées
+for n in range(N):
     t = random()
     x1, y1 = cos(2*pi*t), sin(2*pi*t)
     t = random()
@@ -29,7 +29,7 @@ for _ in range(N):
     # plt.pause(1e-6)
     d = sqrt((y2-y1)**2 + (x2-x1)**2)
     lengths.append(d)
-    plt.plot([x1,x2], [y1,y2], linewidth=0.5, color=(1,d/2,0))
+    if n<2000: plt.plot([x1,x2], [y1,y2], linewidth=0.5, color=(1,d/2,0))
 
 print('calculs ok\n')
 
@@ -37,9 +37,9 @@ plt.figure(2)
 
 h=0.01 # le pas de l'histogramme de distribution
 interv=arange(0, 2, h)
-a, _, _ = plt.hist(lengths, interv, color = 'pink', edgecolor = 'green', label='Dist° des écarts')
+a, _, _ = plt.hist(lengths, interv, color = 'pink', edgecolor = 'green', label='Distribution des distances')
 integ = lambda x: 2/sqrt(4-x**2) * (N*h) / pi
-plt.plot(interv, integ(interv), label="(théorique)", color='k', linestyle='-.')
+plt.plot(interv, integ(interv), label=r"(théorique : $\frac{2}{\sqrt{4-x^2}}$)", color='k', linestyle='-.')
 
 # partie théorique sur la distribution
 # [-1; 1] proba cos(t)<x : 1 - arccos(x)/π
