@@ -1,10 +1,11 @@
-## https://twitter.com/matthen2/status/1433081884402233347
+""" Représente les décimales d1,d2,d3... d'un nombre réel
+    en tournant successivement de d1, puis d2, puis d3...
+    Les nombres rationnels produisent un motif périodique.
+    https://twitter.com/matthen2/status/1433081884402233347 """
 
 import turtle
 import random
 from decimal import *
-
-# Représenter sous forme de motifs réguliers la périodicité du développement décimal des nombres rationnels.
 
 
 strings = lambda x: str(int(x)) + str(x-int(x))[2:]
@@ -22,13 +23,13 @@ def numberToBase(n, b):
 
 
 acc=1000
-b=10 # la base arithmétique utilisée (par défaut, 10)
+b=10
 
 pas=9
 speed=500
 
-getcontext().prec = acc # précision du module décimal
-x=strings(Decimal(1)/Decimal(3**6)) # la fraction du nombre rationnel à représenter (ici, le nombre 1/3⁶)
+getcontext().prec = acc
+x=strings(Decimal(1)/Decimal(3**6))
 print("%s en base %i s'écrit"%(x, b))
 x=numberToBase(x,b)
 print(x)
@@ -46,9 +47,9 @@ pen.pendown()
 n=len(x)
 cpt=0
 for digit in x:
-    cpt+=1
     print("%i/%i %i"%(cpt, n, int(digit)))
     pen.left(360*int(digit)/b)
     pen.forward(pas)
+    cpt+=1
 
 window.exitonclick()
