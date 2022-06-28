@@ -1,6 +1,7 @@
 """ s_{n+1} = le produit des chiffres de s_n
     on s'arrête lorsqu'on atteint un seul chiffre
-    https://fr.wikipedia.org/wiki/Persistance_d%27un_nombre """
+    https://fr.wikipedia.org/wiki/Persistance_d%27un_nombre
+    https://oeis.org/A003001 """
 
 def prod(L):
     if len(L)==1: return L[0]
