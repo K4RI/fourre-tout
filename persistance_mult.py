@@ -1,5 +1,5 @@
 """ s_{n+1} = le produit des chiffres de s_n
-    on s'arrête lorsqu'on atteint zéro
+    on s'arrête lorsqu'on atteint un seul chiffre
     https://fr.wikipedia.org/wiki/Persistance_d%27un_nombre """
 
 def prod(L):
